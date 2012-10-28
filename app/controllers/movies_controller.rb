@@ -26,7 +26,8 @@ class MoviesController < ApplicationController
       session[:ratings] = @selected_ratings
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
-    @movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
+@movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
+#@movies = Movie.find_all_by_rating(['G', 'PG', 'PG-13', 'R'], ordering)
   end
 
   def new
